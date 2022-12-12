@@ -5,7 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: Cereal_History
-- file: history_notebook
 - file: Nutritional_info_cereals
 - file: cereal_health
-- file: Cereal_weightloss
