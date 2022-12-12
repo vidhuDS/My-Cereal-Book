@@ -456,7 +456,7 @@ title="Print to PDF"
 <h1>Nutritional info review of breakfast cereals<a class="headerlink" href="#nutritional-info-review-of-breakfast-cereals" title="Permalink to this headline">#</a></h1>
 <p>Dataset Attribution:
 “80 Cereals” (c) by Chris Crawford is licensed under Creative Commons Attribution-ShareAlike 3.0 Unported</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
@@ -650,7 +650,7 @@ memory usage: 9.8+ KB
 </div>
 <section id="top-five-cereals-based-on-consumer-ranking">
 <h3>Top Five Cereals based on consumer ranking<a class="headerlink" href="#top-five-cereals-based-on-consumer-ranking" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top_5_cereals</span> <span class="o">=</span> <span class="p">(</span><span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">top_5_cereals</span>
@@ -799,7 +799,7 @@ memory usage: 9.8+ KB
 <h3>Calculate sugar limits in popular cereals<a class="headerlink" href="#calculate-sugar-limits-in-popular-cereals" title="Permalink to this headline">#</a></h3>
 <p>All breakfast cereals served in the Child and Adult Care Food Program <a class="reference external" href="https://www.fns.usda.gov/tn/calculating-sugar-limits-breakfast-cereals-cacfp">CACFP</a> must not have more than 6 grams of sugar per dry ounce. This is equal to 21.2 grams of sugar per 100 grams of cereal.
 To calculate this, we primarily need sugar content of each cereal. Let’s focus on selected relevant columns such as cereal, sugar content, consumer rating. I am also selecting calories and fiber for few additional assessments for the popular ten cereals. This new dataframe is named as cereal_group.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal_group</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;calories&#39;</span><span class="p">,</span> <span class="s1">&#39;sugars&#39;</span><span class="p">,</span><span class="s1">&#39;fiber&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;cups&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">cereal_group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -941,9 +941,12 @@ To calculate this, we primarily need sugar content of each cereal. Let’s focus
 </div>
 <p><strong>SUGAR LIMIT CALCULATION</strong></p>
 <p>Using the nutrition information provided, calculate the sugar limit as follows:</p>
-<ol class="simple">
-<li><p>Find the Serving Size, in grams (g), of the cereal= <strong>W</strong>
-Nutritional table here has both in cups as well as ounce.</p></li>
+<ol>
+<li><p>Find the Serving Size, in grams (g), of the cereal= <strong>W</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Nutritional table here has both in cups as well as ounce.
+</pre></div>
+</div>
+</li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="mi">1</span> <span class="n">ounce</span> <span class="o">=</span> <span class="mf">28.3</span><span class="n">g</span> 
         <span class="mi">1</span> <span class="n">cup</span> <span class="o">=</span> <span class="mi">250</span><span class="n">g</span>
@@ -989,13 +992,13 @@ $</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-580ea3f67ebe4cff859d7b6dedb901a6"></div>
+<div id="altair-viz-81e779ac4f214206bb17e58e4ed823d6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-580ea3f67ebe4cff859d7b6dedb901a6") {
-      outputDiv = document.getElementById("altair-viz-580ea3f67ebe4cff859d7b6dedb901a6");
+    if (outputDiv.id !== "altair-viz-81e779ac4f214206bb17e58e4ed823d6") {
+      outputDiv = document.getElementById("altair-viz-81e779ac4f214206bb17e58e4ed823d6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1044,6 +1047,7 @@ $</p>
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-8345778111134066fd8fca22439e4bab"}, "mark": "bar", "encoding": {"x": {"field": "name", "sort": "-y", "title": "Cereal Name", "type": "nominal"}, "y": {"field": "sugars", "title": "Sugar content", "type": "quantitative"}}, "height": 300, "title": "Sugar content of top 10 cereals", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-8345778111134066fd8fca22439e4bab": [{"name": "100% Bran", "calories": 70, "sugars": 6, "fiber": 10.0, "weight": 1.0, "cups": 0.33, "rating": 68.402973}, {"name": "100% Natural Bran", "calories": 120, "sugars": 8, "fiber": 2.0, "weight": 1.0, "cups": 1.0, "rating": 33.983679}, {"name": "All-Bran", "calories": 70, "sugars": 5, "fiber": 9.0, "weight": 1.0, "cups": 0.33, "rating": 59.425505}, {"name": "All-Bran with Extra Fiber", "calories": 50, "sugars": 0, "fiber": 14.0, "weight": 1.0, "cups": 0.5, "rating": 93.704912}, {"name": "Almond Delight", "calories": 110, "sugars": 8, "fiber": 1.0, "weight": 1.0, "cups": 0.75, "rating": 34.384843}, {"name": "Apple Cinnamon Cheerios", "calories": 110, "sugars": 10, "fiber": 1.5, "weight": 1.0, "cups": 0.75, "rating": 29.509541}, {"name": "Apple Jacks", "calories": 110, "sugars": 14, "fiber": 1.0, "weight": 1.0, "cups": 1.0, "rating": 33.174094}, {"name": "Basic 4", "calories": 130, "sugars": 8, "fiber": 2.0, "weight": 1.33, "cups": 0.75, "rating": 37.038562}, {"name": "Bran Chex", "calories": 90, "sugars": 6, "fiber": 4.0, "weight": 1.0, "cups": 0.67, "rating": 49.120253}, {"name": "Bran Flakes", "calories": 90, "sugars": 5, "fiber": 5.0, "weight": 1.0, "cups": 0.67, "rating": 53.313813}]}}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
+<p><strong>Figure 1</strong>: Bar graph showing sugar content in top ten cereals</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Did you know?
@@ -1053,7 +1057,7 @@ Fiber keeps one full for longer time and are more nutritious with lower calories
 <section id="fiber-content-of-top-10-cereals">
 <h4>Fiber content of top 10 cereals<a class="headerlink" href="#fiber-content-of-top-10-cereals" title="Permalink to this headline">#</a></h4>
 <p>Let’s now look at the top rated cereals and plot the fiber content in top 10 cereals.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top10_fiber_cereal</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;fiber&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">top10_fiber_cereal</span>
@@ -1304,13 +1308,13 @@ Fiber keeps one full for longer time and are more nutritious with lower calories
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-66539124a3634c8391a457157f81740c"></div>
+<div id="altair-viz-b39998f072764061aac5fe0bf78a2220"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-66539124a3634c8391a457157f81740c") {
-      outputDiv = document.getElementById("altair-viz-66539124a3634c8391a457157f81740c");
+    if (outputDiv.id !== "altair-viz-b39998f072764061aac5fe0bf78a2220") {
+      outputDiv = document.getElementById("altair-viz-b39998f072764061aac5fe0bf78a2220");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1359,12 +1363,13 @@ Fiber keeps one full for longer time and are more nutritious with lower calories
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-8f2acae66ffbee10a0918894495f6341"}, "mark": "bar", "encoding": {"x": {"field": "name", "sort": "-y", "title": "Cereal Name", "type": "nominal"}, "y": {"field": "fiber", "title": "Fiber content", "type": "quantitative"}}, "height": 300, "title": "Fiber content of top 10 cereals", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-8f2acae66ffbee10a0918894495f6341": [{"name": "All-Bran with Extra Fiber", "mfr": "K", "type": "C", "calories": 50, "protein": 4, "fat": 0, "sodium": 140, "fiber": 14.0, "carbo": 8.0, "sugars": 0, "potass": 330, "vitamins": 25, "shelf": 3, "weight": 1.0, "cups": 0.5, "rating": 93.704912}, {"name": "100% Bran", "mfr": "N", "type": "C", "calories": 70, "protein": 4, "fat": 1, "sodium": 130, "fiber": 10.0, "carbo": 5.0, "sugars": 6, "potass": 280, "vitamins": 25, "shelf": 3, "weight": 1.0, "cups": 0.33, "rating": 68.402973}, {"name": "All-Bran", "mfr": "K", "type": "C", "calories": 70, "protein": 4, "fat": 1, "sodium": 260, "fiber": 9.0, "carbo": 7.0, "sugars": 5, "potass": 320, "vitamins": 25, "shelf": 3, "weight": 1.0, "cups": 0.33, "rating": 59.425505}, {"name": "Post Nat. Raisin Bran", "mfr": "P", "type": "C", "calories": 120, "protein": 3, "fat": 1, "sodium": 200, "fiber": 6.0, "carbo": 11.0, "sugars": 14, "potass": 260, "vitamins": 25, "shelf": 3, "weight": 1.33, "cups": 0.67, "rating": 37.840594}, {"name": "Raisin Bran", "mfr": "K", "type": "C", "calories": 120, "protein": 3, "fat": 1, "sodium": 210, "fiber": 5.0, "carbo": 14.0, "sugars": 12, "potass": 240, "vitamins": 25, "shelf": 2, "weight": 1.33, "cups": 0.75, "rating": 39.259197}, {"name": "Fruit & Fibre Dates; Walnuts; and Oats", "mfr": "P", "type": "C", "calories": 120, "protein": 3, "fat": 2, "sodium": 160, "fiber": 5.0, "carbo": 12.0, "sugars": 10, "potass": 200, "vitamins": 25, "shelf": 3, "weight": 1.25, "cups": 0.67, "rating": 40.917047}, {"name": "Fruitful Bran", "mfr": "K", "type": "C", "calories": 120, "protein": 3, "fat": 0, "sodium": 240, "fiber": 5.0, "carbo": 14.0, "sugars": 12, "potass": 190, "vitamins": 25, "shelf": 3, "weight": 1.33, "cups": 0.67, "rating": 41.015492}, {"name": "Bran Flakes", "mfr": "P", "type": "C", "calories": 90, "protein": 3, "fat": 0, "sodium": 210, "fiber": 5.0, "carbo": 13.0, "sugars": 5, "potass": 190, "vitamins": 25, "shelf": 3, "weight": 1.0, "cups": 0.67, "rating": 53.313813}, {"name": "Total Raisin Bran", "mfr": "G", "type": "C", "calories": 140, "protein": 3, "fat": 1, "sodium": 190, "fiber": 4.0, "carbo": 15.0, "sugars": 14, "potass": 230, "vitamins": 100, "shelf": 3, "weight": 1.5, "cups": 1.0, "rating": 28.592785}, {"name": "Shredded Wheat 'n'Bran", "mfr": "N", "type": "C", "calories": 90, "protein": 3, "fat": 0, "sodium": 0, "fiber": 4.0, "carbo": 19.0, "sugars": 0, "potass": 140, "vitamins": 0, "shelf": 1, "weight": 1.0, "cups": 0.67, "rating": 74.472949}]}}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
+<p><strong>Figure 2</strong>: Bar graph showing fiber content in top ten cereals</p>
 </section>
 </section>
 <section id="conclusions">
 <h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
-<li><p>All-Bran with Extra Fiber is the healthiest cereal option and is also rated highly by the consumers. It has negligible sugar value, low calories and therefore, an ideal option for consumers who are cautious of their caloric and sugar intake.</p></li>
+<li><p>All-Bran with Extra Fiber is the healthiest cereal option and is also rated highly by the consumers. It has negligible sugar, low calories and therefore, an ideal option for consumers who are cautious of their caloric and sugar intake.</p></li>
 <li><p>Most Bran options are high in fiber, lower sugar and therefore considered as healthy.</p></li>
 <li><p>It is interesting to see that consumers are shifting to more healthier choices unlike earlier when most cereals with high sugar content would be the crowd winners.</p></li>
 </ol>
